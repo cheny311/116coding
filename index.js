@@ -3,13 +3,17 @@ import express from "express";
 
 //create an instance of an express application
 const app = express();
-
+app.use(express.json())
 //set the port the application will run on
 const port = process.env.PORT || 3001;
 
+
 //set up response for the root path of the application
 app.get("/", (req, res) => {
-  res.send("Draw a cow");
+  // res.send("Draw a cow");
+  res.json({
+    data: "response hello"
+  })
 });
 
 //set up the application to listen on the specified port
